@@ -16,7 +16,74 @@
       </nav>
     </header>
     <main>
-      <h1>Contact</h1>
+      <h1>Student Register form</h1>
+      <form>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <div>
+            <label for="firstName"> <input type="text" name="firstName" id="firstName" placeholder="First Name" required /></label>
+          </div>
+          <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Last Name" require>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Email" require>
+          </div>
+          <div>
+            <label for="tel">Tel:</label>
+            <input type="tel" name="tel" id="tel" placeholder="Telephone">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Skill Levels</legend>
+          <div>
+            <label for="htmlSkill">HTML Skill:</label>
+            <input type="range" min="0" max="10" name="htmlSkill" id="htmlSkill">
+          </div>
+          <div>
+            <label for="cssSkill">CSS Skill:</label>
+            <input type="range" min="0" max="10" name="cssSkill" id="cssSkill">
+          </div>
+          <div>
+            <label for="jsSkill">Javascript Skill:</label>
+            <input type="range" min="0" max="10" name="jsSkill" id="jsSkill">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Course Preferences</legend>
+          <span>Study Mode:</span>
+          <div>
+            <input type="radio" name="mode" value="on-site" id="onsite"> <label for="onsite">On-site</label>
+          </div>
+          <div>
+            <input type="radio" name="mode" value="online" id="online"> <label for="online">Online</label>
+          </div>
+          <div>
+            <input type="radio" name="mode" value="hybrid" id="hybrid"> <label for="hybrid">Hybrid</label>
+          </div>
+          <br>
+          <span>Topics of interest:</span>
+          <div>
+            <input type="checkbox" name="topic" value="html" id="html"><label for="html">HTML</label>
+          </div>
+          <div>
+            <input type="checkbox" name="topic" value="css" id="css"><label for="css">CSS</label>
+          </div>
+          <div>
+            <input type="checkbox" name="topic" value="js" id="js"><label for="js">Javascript</label>
+          </div>
+          <br>
+          <label for="level">Course Level:</label>
+          <select id="level" name="level">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advance">Advance</option>
+          </select>
+        </fieldset>
+        <button type="submit">Send</button>
+      </form>
     </main>
     <footer>
       <nav>
