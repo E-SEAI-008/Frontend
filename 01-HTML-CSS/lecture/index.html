@@ -3,15 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTML</title>
+    <title>HTML and CSS</title>
+    <!-- Internal CSS -->
+    <!-- <style>
+      header {
+        background-color: aqua; 
+        color: black;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+      }
+      .link {
+        color:white;
+      }
+      #link1 {
+        color: red;
+      }
+     </style> -->
+    <!-- External CSS connection -->
+    <link rel="stylesheet" href="./src/styles/index.css" />
   </head>
   <body>
-    <header>
+    <!-- Inline CSS -->
+    <!-- <header style="background-color: black; color: white; padding: 10px;"> -->
+    <header class="header" id="header">
+      <div>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+        <a href="#">Home</a>
+      </div>
       <nav>
         <ul>
-          <li><a href="#"><b>Home</b></a></li>
-          <li><a href="./src/pages/about.html">About</a></li>
-          <li><a href="./src/pages/contact.html">Contact</a></li>
+          <li id="link1">
+            <a class="link" id="link1" href="#"><b>Home</b></a>
+          </li>
+          <li><a class="link" id="link2" href="./src/pages/about.html">About</a></li>
+          <li><a class="link" id="link3" href="./src/pages/contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
@@ -21,12 +49,21 @@
         <h2>HTML articles</h2>
         <figure>
           <div>
-            <img width="100px" src="https://www.bellaandduke.com/wp-content/uploads/2024/11/Best-dog-breeds-for-first-time-owners-featured-image.webp" alt="Two puppies been held by a person" />
+            <img
+              width="100px"
+              src="https://www.bellaandduke.com/wp-content/uploads/2024/11/Best-dog-breeds-for-first-time-owners-featured-image.webp"
+              alt="Two puppies been held by a person"
+            />
           </div>
           <figcaption>Two beautiful puppies</figcaption>
         </figure>
         <div>
-          <img width="100px" height="100px" src="./src/assets/cutePuppies.webp" alt="Two puppies been held by a person" />
+          <img
+            width="100px"
+            height="100px"
+            src="./src/assets/cutePuppies.webp"
+            alt="Two puppies been held by a person"
+          />
         </div>
         <section>
           <h3>Introduction to HTML</h3>
@@ -47,6 +84,8 @@
         <ul>
           <li>
             <a
+              class="socials"
+              id="socials1"
               target="_blank"
               href="https://www.google.com/search?q=dog&rlz=1C5CHFA_enDE1172DE1173&oq=dog&gs_lcrp=EgZjaHJvbWUqBwgAEAAYjwIyBwgAEAAYjwIyBwgBEC4YgAQyEAgCEC4YrwEYxwEYgAQYjgUyBwgDEC4YgAQyBwgEEC4YgAQyBggFEEUYPTIGCAYQRRg8MgYIBxBFGD3SAQgxNzgzajBqN6gCALACAA&sourceid=chrome&ie=UTF-8&source=chrome.ob"
               >instagram</a

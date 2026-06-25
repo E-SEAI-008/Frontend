@@ -1,0 +1,48 @@
+/* External css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+}
+/* rem - 1rem = 20px */
+
+header {
+  background-color: black;
+  /* margin: 10px 15px 20px 30px; */
+  /* margin-bottom: 30px; */
+  padding: 1rem;
+  border: 0.2rem solid red;
+  /* min-width: 10rem;
+    max-width: 20rem; */
+  /* width: 50%; */
+  /* height: 10px; */
+}
+header div a {
+    display: inline-block;
+    height: 100px;
+    margin: 10px;
+    padding: 10px;
+}
+
+#link1 {
+    display: block;
+}
+
+/* header nav ul li {
+    display: inline-block;
+} */
+ header nav ul {
+    display: flex;
+    flex-direction: row-reverse;
+ }
+main {
+    min-height: 88vh;
+}
+footer {
+  background-color: black;
+  padding: 0.5rem;
+}
