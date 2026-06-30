@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f8ff;
+  color: #333;
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas:
+    'header header header'
+    'sidebar main main'
+    'footer footer footer';
+}
+
+header {
+  background-color: #ffcc5c;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  grid-area: header;
+}
+aside {
+  background-color: #88d8b0;
+  padding: 1rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.1);
+  grid-area: sidebar;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 2rem;
+  /* min-height: 100rem; */
+  grid-area: main;
+}
+
+main > section {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.section-content {
+  padding: 0.5rem;
+}
+
+#list > li {
+  margin-left: 2rem;
+}
+
+#dog-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-template-rows: 200px 5rem; */
+  grid-auto-rows: 1fr;
+  grid-template-areas:
+    'dog1 dog1'
+    'dog1 dog1'
+    'dog2 dog3'
+    'dog4 dog4';
+  /* place-items: center; */
+  justify-items: end;
+  align-items: end;
+  overflow: hidden;
+  gap: 2rem;
+}
+
+#dog-gallery figure {
+  width: 18rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.2);
+}
+
+#figure1 {
+  /* grid-column-start: 1;
+    grid-column-end: 3; */
+  /* grid-column: 1/3;
+    grid-row: 1/3; */
+  background-color: aquamarine;
+  grid-area: dog1;
+  justify-self: start;
+  align-self: center;
+}
+#figure2 {
+  background-color: pink;
+  /* grid-column: 2/3;
+   grid-row: 1/3; */
+  grid-area: dog2;
+}
+#figure3 {
+  background-color: rgb(192, 240, 255);
+  /* grid-column: 1/3;
+  grid-row: 3/5; */
+  grid-area: dog3;
+}
+#figure4 {
+  background-color: greenyellow;
+  grid-area: dog4;
+  /* grid-area: 2/1/4/3; */
+}
+/* #figure5 {
+  background-color: rgb(255, 250, 192);
+}
+#figure6 {
+  background-color: rgb(232, 192, 255);
+} */
+
+/* @media (min-width: 769px) {
+  #dog-gallery {
+    height: 40rem;
+    gap: 0rem;
+    align-content: space-around;
+  }
+}
+@media (min-width: 1100px) {
+  #dog-gallery {
+    height: 60rem;
+    gap: 0rem;
+    align-content: space-around;
+  }
+  #dog-gallery figure {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+@media (min-width: 1500px) {
+  #dog-gallery {
+    height: 20rem;
+    gap: 0rem;
+    align-content: space-around;
+  }
+  #dog-gallery figure {
+    width: 15rem;
+    height: 15rem;
+  }
+} */
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
