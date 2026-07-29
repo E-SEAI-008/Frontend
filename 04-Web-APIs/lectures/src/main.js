@@ -12,21 +12,9 @@ const getItem = (key) => {
 
 const form = document.querySelector('#add-todo');
 const todoList = document.getElementById('todo-list');
-let todos = localStorage.getItem("todos") || [];
+let todos = getItem('todos') || [];
 
 // todos.forEach((todo) => console.log(todo));
-localStorage.setItem("username", "Alice")
-storeItem("username", "Alice")
-storeItem('age', 22);
-storeItem('isStudent', true);
-storeItem('hobbies', ['singing', 'running']);
-storeItem('person', {
-  name: 'Alice',
-  age: 22,
-  hobbies: ['singing', 'running'],
-});
-
-console.log(getItem("person"))
 
 const addTodo = (item) => {
   const li = document.createElement('li');
@@ -36,11 +24,44 @@ const addTodo = (item) => {
   const span = document.createElement('span');
   span.textContent = item.title;
 
+  const doneBtn = document.createElement("button");
+  doneBtn.textContent = "done"
+  doneBtn.addEventListener("click", () => {
+    if(item.completed) {
+      item.completed = false;
+      li.style.textDecoration = 'none';
+      todos = todos.map((todo) => {
+        if(item.id === todo.id) {
+          todo.completed = item.completed;
+          return todo
+        }
+        return todo
+      })
+      storeItem("todos", todos)
+    } else {
+      item.completed = true;
+      li.style.textDecoration = 'line-through';
+      todos = todos.map((todo) => {
+        if (item.id === todo.id) {
+          todo.completed = item.completed;
+          return todo;
+        }
+        return todo;
+      });
+      storeItem('todos', todos);
+    }
+  })
+
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'delete';
-  deleteBtn.addEventListener('click', () => li.remove());
+  deleteBtn.addEventListener('click', () => {
+    li.remove()
+    todos = todos.filter((todo) => todo.id !== item.id);
+    storeItem("todos", todos)
+  });
 
   li.appendChild(span);
+  li.appendChild(doneBtn);
   li.appendChild(deleteBtn);
   // todoList.appendChild(li)
   return li;
@@ -81,13 +102,15 @@ form.addEventListener('submit', (event) => {
   };
   const newTodoElement = addTodo(newTodoItem);
   todoList.appendChild(newTodoElement);
+  todos.push(newTodoItem);
+  storeItem("todos", todos)
   form.reset();
 });
 
 document.addEventListener('DOMContentLoaded', async () => {
   // const todos = await getData('https://jsonplaceholder.typicode.com/todos');
   // console.log(todos);
-  todos.slice(0, 10).forEach((todo) => {
+  todos.forEach((todo) => {
     const newTodoElement = addTodo(todo);
     todoList.appendChild(newTodoElement);
   });
