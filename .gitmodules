@@ -1,0 +1,3 @@
+[submodule "06-Intro-to-React/react-lecture"]
+    path = 06-Intro-to-React/react-lecture
+    url = https://github.com/E-SEAI-008/react-lecture.git
