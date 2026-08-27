@@ -1,0 +1,1 @@
+export type { IUser, Product } from './models';
